@@ -47,7 +47,7 @@ function secondChange() {//중분류 변한 경우
  if(first == 1) {
   group[0][0]=new Option("중분류를 먼저 선택하세요","");
   //삼성 컴퓨터
-  group[1][0]=new Option("삼성컴퓨터 선택","");
+  group[1][0]=new Option("서울 지역 선택","");
   group[1][1]=new Option("섬성 팬티엄III","ss3");
   group[1][2]=new Option("삼성 팬티엄IV","ss4");
   group[1][3]=new Option("삼성 센스 노트북","ssnote");
