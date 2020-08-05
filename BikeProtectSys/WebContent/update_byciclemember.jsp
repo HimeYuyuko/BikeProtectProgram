@@ -13,6 +13,7 @@
 </html>
 <body>
 <% 
+	//커밋 시험
 	String percode = request.getParameter("percode");
 	String passwd = request.getParameter("passwd");
 	String name = request.getParameter("name");
