@@ -1,28 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link rel="stylesheet" type="text/css" href=create_A.css>
 <link href="create_A.css" type="text/css" rel="stylesheet">
-<title>È¸¿ø°¡ÀÔ</title>
+<title>íšŒì›ê°€ìž…</title>
 </html>
 <body>
-	È¸¿ø°¡ÀÔ
+	íšŒì›ê°€ìž…
 	<form method="post" action = "create_precode.jsp" id="create_code">
-	<pre>µî·Ï¹øÈ£ : <input type = "submit" value="µî·Ï¹øÈ£ ¸¸µé±â" onclick="create_precod.jsp"><br/></pre>
+	<pre>ë“±ë¡ë²ˆí˜¸ : <input type = "submit" value="ë“±ë¡ë²ˆí˜¸ ë§Œë“¤ê¸°" onclick="create_precod.jsp"><br/></pre>
 	</form>
 	<form method="post" action="update_byciclemember.jsp" id="login">
 		
-		<pre>ÆÐ½º¿öµå : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
-		<pre>ÀÌ¸§ :    <input type="text" name="name" id="name_ipnut" maxlength="12" required><br/></pre>
+		<pre>íŒ¨ìŠ¤ì›Œë“œ : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
+		<pre>ì´ë¦„ :    <input type="text" name="name" id="name_ipnut" maxlength="12" required><br/></pre>
 		<!-- placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}"  -->
-		<pre>ÀÌ¸ÞÀÏ ÁÖ¼Ò : <input type="text" name="mail" id="mail_ipnut" maxlength="20" placeholder="###@####.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required title="###@####.com"><br/></pre>
-		<pre>ÀüÈ­¹øÈ£ :   <input type="tel" name="tel" id="tel" maxlength="13" placeholder="000-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" required title="000-0000-0000"><br/></pre>
-		<pre>±¸ºÐ : <input type="radio" name="user" value="0" checked> ÇÐ»ý <input type="radio" name="user" value="1"> ´ëÇÐ¿ø <input type="radio" name="user" value="2"> ±³Á÷¿ø</pre>
-		<input type="submit" value="È¸¿ø°¡ÀÔ">
-		<button type="button" onclick="history.go(-1)">µ¹¾Æ°¡±â</button>
+		<pre>ì´ë©”ì¼ ì£¼ì†Œ : <input type="text" name="mail" id="mail_ipnut" maxlength="20" placeholder="###@####.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required title="###@####.com"><br/></pre>
+		<pre>ì „í™”ë²ˆí˜¸ :   <input type="tel" name="tel" id="tel" maxlength="13" placeholder="000-0000-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" required title="000-0000-0000"><br/></pre>
+		<pre>êµ¬ë¶„ : <input type="radio" name="user" value="0" checked> í•™ìƒ <input type="radio" name="user" value="1"> ëŒ€í•™ì› <input type="radio" name="user" value="2"> êµì§ì›</pre>
+		<input type="submit" value="íšŒì›ê°€ìž…">
+		<button type="button" onclick="history.go(-1)">ëŒì•„ê°€ê¸°</button>
 	</form>
 		
 </body>

@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("UTF-8"); %>
 
 
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ȸ�� �߰�</title>
+<title>회원 추가</title>
 </html>
 <body>
 <% 
@@ -28,7 +28,7 @@
 		String dbId = "root";
 		String dbPass = "Nazi19451210!";
 		
-		// DB�� ������ ���� Connection ��ü�� ���� �κ�
+		// DB와 연동을 위한 Connection 객체를 얻어내는 부분
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
@@ -39,12 +39,12 @@
         while(result.next()){
             if(result.getString(2).equals(passwd))
             {
-            	str="�̹� �����ϴ� ��ȣ�Դϴ�.";
+            	str="이미 존재하는 암호입니다.";
             	break;
             }
             else if(result.getString(5).equals(tel))
             {
-            	str="�̹� �����ϴ� ��ȭ��ȣ�Դϴ�.";
+            	str="이미 존재하는 전화번호입니다.";
             	break;
             }
           
@@ -59,13 +59,13 @@
         	pstmt.setString(4, area);
         	pstmt.setString(5, tel);
         	pstmt.executeUpdate();
-        	str="������ �����Ǿ����ϴ�.";
+        	str="계정이 생성되었습니다.";
         }
         result.close();
     		
         
 	}catch(SQLException e){
-        out.println("��ȸ�� ������ �ֽ��ϴ�.");
+        out.println("조회에 문제가 있습니다.");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -75,6 +75,6 @@
     }
 %>
 	<%=str %>
-	<button onclick="history.go(-2)">���ư���</button>
+	<button onclick="history.go(-2)">돌아가기</button>
 </body>
 </html>

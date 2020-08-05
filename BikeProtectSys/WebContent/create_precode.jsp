@@ -1,42 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ÄÄÇ»ÅÍ</title>
+<title>ì»´í“¨í„°</title>
 <head>
 <script language="javascript">
-function firstChange() {// ´ëºĞ·ù º¯ÇÑ °æ¿ì
- var x = document.form1.first.options.selectedIndex;//¼±ÅÃÇÑ ÀÎµ¦½º
- var groups=document.form1.first.options.length;//´ëºĞ·ù °¹¼ö
- var group=new Array(groups);//¹è¿­ »ı¼º
+function firstChange() {// ëŒ€ë¶„ë¥˜ ë³€í•œ ê²½ìš°
+ var x = document.form1.first.options.selectedIndex;//ì„ íƒí•œ ì¸ë±ìŠ¤
+ var groups=document.form1.first.options.length;//ëŒ€ë¶„ë¥˜ ê°¯ìˆ˜
+ var group=new Array(groups);//ë°°ì—´ ìƒì„±
  for (i=0; i<groups; i++) {
   group[i]=new Array();
  }//for
- // ¿É¼Ç(<option>) »ı¼º
- group[0][0]=new Option("´ëºĞ·ù¸¦ ¸ÕÀú ¼±ÅÃÇÏ¼¼¿ä","");
- group[1][0]=new Option("ÄÄÇ»ÅÍ È¸»ç ¼±ÅÃ","");
- group[1][1]=new Option("»ï¼º","ss");//°á°ú <option value="ss">»ï¼º</option>
- group[1][2]=new Option("´ë¿ì","dw");
- group[1][3]=new Option("¿¤Áö","lg");
- group[2][0]=new Option("ÇÁ¸°ÅÍ È¸»ç ¼±ÅÃ","");
- group[2][1]=new Option("¿¦¼Õ","epson");
- group[2][2]=new Option("ÈŞ·§ÆÑÄ¿µå","hp");
- group[2][3]=new Option("»ïº¸","sb");
+ // ì˜µì…˜(<option>) ìƒì„±
+ group[0][0]=new Option("ëŒ€ë¶„ë¥˜ë¥¼ ë¨¼ì € ì„ íƒí•˜ì„¸ìš”","");
+ group[1][0]=new Option("ì»´í“¨í„° íšŒì‚¬ ì„ íƒ","");
+ group[1][1]=new Option("ì‚¼ì„±","ss");//ê²°ê³¼ <option value="ss">ì‚¼ì„±</option>
+ group[1][2]=new Option("ëŒ€ìš°","dw");
+ group[1][3]=new Option("ì—˜ì§€","lg");
+ group[2][0]=new Option("í”„ë¦°í„° íšŒì‚¬ ì„ íƒ","");
+ group[2][1]=new Option("ì—¡ì†","epson");
+ group[2][2]=new Option("íœ´ë«íŒ©ì»¤ë“œ","hp");
+ group[2][3]=new Option("ì‚¼ë³´","sb");
 
- temp = document.form1.second;//µÎ¹ø Â° ¼¿·ºÆ® ¾ò±â(<select name=second>)
- for (m = temp.options.length-1 ; m > 0 ; m--) {//ÇöÀç °ª Áö¿ì±â
+ temp = document.form1.second;//ë‘ë²ˆ ì§¸ ì…€ë ‰íŠ¸ ì–»ê¸°(<select name=second>)
+ for (m = temp.options.length-1 ; m > 0 ; m--) {//í˜„ì¬ ê°’ ì§€ìš°ê¸°
   temp.options[m]=null
  }
- for (i=0;i<group[x].length;i++){//°ª ¼ÂÆÃ
-  //¿¹) <option value="ss">»ï¼º</option>
+ for (i=0;i<group[x].length;i++){//ê°’ ì…‹íŒ…
+  //ì˜ˆ) <option value="ss">ì‚¼ì„±</option>
   temp.options[i]=new Option(group[x][i].text,group[x][i].value);
  }
- temp.options[0].selected=true//ÀÎµ¦½º 0¹øÂ°, Áï, Ã¹¹øÂ° ¼±ÅÃ
+ temp.options[0].selected=true//ì¸ë±ìŠ¤ 0ë²ˆì§¸, ì¦‰, ì²«ë²ˆì§¸ ì„ íƒ
 }//firstChange
 
-function secondChange() {//ÁßºĞ·ù º¯ÇÑ °æ¿ì
+function secondChange() {//ì¤‘ë¶„ë¥˜ ë³€í•œ ê²½ìš°
  var first = document.form1.first.options.selectedIndex;
  var x = document.form1.second.options.selectedIndex;
  var groups=document.form1.second.options.length;
@@ -45,33 +45,33 @@ function secondChange() {//ÁßºĞ·ù º¯ÇÑ °æ¿ì
    group[i]=new Array();
  }
  if(first == 1) {
-  group[0][0]=new Option("ÁßºĞ·ù¸¦ ¸ÕÀú ¼±ÅÃÇÏ¼¼¿ä","");
-  //»ï¼º ÄÄÇ»ÅÍ
-  group[1][0]=new Option("»ï¼ºÄÄÇ»ÅÍ ¼±ÅÃ","");
-  group[1][1]=new Option("¼¶¼º ÆÒÆ¼¾öIII","ss3");
-  group[1][2]=new Option("»ï¼º ÆÒÆ¼¾öIV","ss4");
-  group[1][3]=new Option("»ï¼º ¼¾½º ³ëÆ®ºÏ","ssnote");
-  //´ë¿ì ÄÄÇ»ÅÍ
-  group[2][0]=new Option("´ë¿ì ÄÄÇ»ÅÍ ¼±ÅÃ","");
-  group[2][1]=new Option("´ë¿ì µ¥½ºÅ©Å¾ ÇÁ·Î","dw");
-  group[3][0]=new Option("¿¤Áö ÄÄÇ»ÅÍ ¼±ÅÃ","");
-  //LG ÄÄÇ»ÅÍ
+  group[0][0]=new Option("ì¤‘ë¶„ë¥˜ë¥¼ ë¨¼ì € ì„ íƒí•˜ì„¸ìš”","");
+  //ì‚¼ì„± ì»´í“¨í„°
+  group[1][0]=new Option("ì‚¼ì„±ì»´í“¨í„° ì„ íƒ","");
+  group[1][1]=new Option("ì„¬ì„± íŒ¬í‹°ì—„III","ss3");
+  group[1][2]=new Option("ì‚¼ì„± íŒ¬í‹°ì—„IV","ss4");
+  group[1][3]=new Option("ì‚¼ì„± ì„¼ìŠ¤ ë…¸íŠ¸ë¶","ssnote");
+  //ëŒ€ìš° ì»´í“¨í„°
+  group[2][0]=new Option("ëŒ€ìš° ì»´í“¨í„° ì„ íƒ","");
+  group[2][1]=new Option("ëŒ€ìš° ë°ìŠ¤í¬íƒ‘ í”„ë¡œ","dw");
+  group[3][0]=new Option("ì—˜ì§€ ì»´í“¨í„° ì„ íƒ","");
+  //LG ì»´í“¨í„°
   group[3][1]=new Option("LG IBM PC","lgpc");
   group[3][2]=new Option("LG IBM NOTEBOOK ","lgnote");
  } else if(first == 2) {
-  group[0][0]=new Option("ÁßºĞ·ù¸¦ ¸ÕÀú ¼±ÅÃÇÏ¼¼¿ä","");
-  //¿¦¼Õ ÇÁ¸°ÅÍ
-  group[1][0]=new Option("¿¦¼Õ ÇÁ¸°ÅÍ ¼±ÅÃ","");
-  group[1][1]=new Option("¿¦¼Õ À×Å©","epson_ink");
-  group[1][2]=new Option("¿¦¼Õ ·¹ÀÌÁ®","epson_laser");
-  //ÈŞ·¿ÆÑÄ¿µå ÇÁ¸°ÅÍ
-  group[2][0]=new Option("ÈŞ·¿ÆÑÄ¿µå ÇÁ¸°ÅÍ ¼±ÅÃ","");
-  group[2][1]=new Option("HP À×Å©Á¬","hp_ink");
-  group[2][2]=new Option("HP ·¹ÀÌÁ®Á¬","hp_laser");
-  //»ïº¸ ÇÁ¸°ÅÍ
-  group[3][0]=new Option("»ïº¸ ÇÁ¸°ÅÍ ¼±ÅÃ","");
-  group[3][1]=new Option("»ïº¸ À×Å©Á¬","sambo_ink");
-  group[3][2]=new Option("»ïº¸ ·¹ÀÌÁ®Á¬","sambo_laser");
+  group[0][0]=new Option("ì¤‘ë¶„ë¥˜ë¥¼ ë¨¼ì € ì„ íƒí•˜ì„¸ìš”","");
+  //ì—¡ì† í”„ë¦°í„°
+  group[1][0]=new Option("ì—¡ì† í”„ë¦°í„° ì„ íƒ","");
+  group[1][1]=new Option("ì—¡ì† ì‰í¬","epson_ink");
+  group[1][2]=new Option("ì—¡ì† ë ˆì´ì ¸","epson_laser");
+  //íœ´ë ›íŒ©ì»¤ë“œ í”„ë¦°í„°
+  group[2][0]=new Option("íœ´ë ›íŒ©ì»¤ë“œ í”„ë¦°í„° ì„ íƒ","");
+  group[2][1]=new Option("HP ì‰í¬ì ¯","hp_ink");
+  group[2][2]=new Option("HP ë ˆì´ì ¸ì ¯","hp_laser");
+  //ì‚¼ë³´ í”„ë¦°í„°
+  group[3][0]=new Option("ì‚¼ë³´ í”„ë¦°í„° ì„ íƒ","");
+  group[3][1]=new Option("ì‚¼ë³´ ì‰í¬ì ¯","sambo_ink");
+  group[3][2]=new Option("ì‚¼ë³´ ë ˆì´ì ¸ì ¯","sambo_laser");
  }
 
  temp = document.form1.third;
@@ -89,17 +89,17 @@ function secondChange() {//ÁßºĞ·ù º¯ÇÑ °æ¿ì
 <form name="form1">
 
 <select name=first onchange="firstChange();" size=1>
-<option value=''>´ëºĞ·ù</option>
-<option value=''>ÄÄÇ»ÅÍ</option>
-<option value=''>ÇÁ¸°ÅÍ</option>
+<option value=''>ëŒ€ë¶„ë¥˜</option>
+<option value=''>ì»´í“¨í„°</option>
+<option value=''>í”„ë¦°í„°</option>
 </select>
 
 <select name=second onchange="secondChange();" size=1>
- <option value=''>´ëºĞ·ù¸¦ ¸ÕÀú ¼±ÅÃÇÏ¼¼¿ä</option>
+ <option value=''>ëŒ€ë¶„ë¥˜ë¥¼ ë¨¼ì € ì„ íƒí•˜ì„¸ìš”</option>
 </select>
 
 <select name=third size=1>
- <option value=''>ÁßºĞ·ù¸¦ ¸ÕÀú ¼±ÅÃÇÏ¼¼¿ä</option>
+ <option value=''>ì¤‘ë¶„ë¥˜ë¥¼ ë¨¼ì € ì„ íƒí•˜ì„¸ìš”</option>
 </select>
 
 </form>

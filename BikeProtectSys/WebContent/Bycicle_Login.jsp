@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 
-<% request.setCharacterEncoding("euc-kr"); %>
+<% request.setCharacterEncoding("UTF-8"); %>
 
 
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>·Î±×ÀÎ</title>
+<title>ë¡œê·¸ì¸</title>
 </html>
 <body>
 
@@ -27,7 +27,7 @@
 		String dbId = "root";
 		String dbPass = "Nazi19451210!";
 		
-		// DB¿Í ¿¬µ¿À» À§ÇÑ Connection °´Ã¼¸¦ ¾ò¾î³»´Â ºÎºÐ
+		// DBì™€ ì—°ë™ì„ ìœ„í•œ Connection ê°ì²´ë¥¼ ì–»ì–´ë‚´ëŠ” ë¶€ë¶„
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
@@ -45,7 +45,7 @@
             		if(str.equals("success")) return;
             	}
             	else{
-            		str="ºñ¹Ð¹øÈ£°¡ Æ²¸³´Ï´Ù.";
+            		str="ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.";
             		break;
             	}
             }
@@ -53,14 +53,14 @@
         }
         if (str.equals(""))
         {
-        	str="¾ÆÀÌµð°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.";        	
+        	str="ì•„ì´ë””ê°€ ì¡´ìž¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";        	
         }
 
         result.close();
     		
         
 	}catch(SQLException e){
-        out.println("¿¬°á¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.");
+        out.println("ì—°ê²°ì— ë¬¸ì œê°€ ìžˆìŠµë‹ˆë‹¤.");
         out.println(e.toString());
         e.printStackTrace();
     }
@@ -70,6 +70,6 @@
     }
 %>
 	<%=str %>
-	<button type="button" onclick="history.go(-1)">µ¹¾Æ°¡±â</button>
+	<button type="button" onclick="history.go(-1)">ëŒì•„ê°€ê¸°</button>
 </body>
 </html>

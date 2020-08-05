@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link rel="stylesheet" type="text/css" href="main.css">
 <link href="main.css" type="text/css" rel="stylesheet">
-<title>¸ÞÀÎÈ­¸é</title>
+<title>ë©”ì¸í™”ë©´</title>
 </html>
 <body>
-	·Î±×ÀÎ
+	ë¡œê·¸ì¸
 	<form method="post" action="Bycicle_Login.jsp" id="login">
-		<pre>¾ÆÀÌµð :   <input type="text" name="id" id="id_ipnut" maxlength="12" required><br/></pre>
-		<pre>ÆÐ½º¿öµå : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
-		<input type="submit" value="·Î±×ÀÎ">
-		<button type="button" onclick="location.href='Create_byciclemember.jsp'">È¸¿ø°¡ÀÔ</button>
-		<input type="submit" formaction="login_admin.jsp" value="°ü¸®ÀÚ ·Î±×ÀÎ">
+		<pre>ì•„ì´ë”” :   <input type="text" name="id" id="id_ipnut" maxlength="12" required><br/></pre>
+		<pre>íŒ¨ìŠ¤ì›Œë“œ : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
+		<input type="submit" value="ë¡œê·¸ì¸">
+		<button type="button" onclick="location.href='Create_byciclemember.jsp'">íšŒì›ê°€ìž…</button>
+		<input type="submit" formaction="login_admin.jsp" value="ê´€ë¦¬ìž ë¡œê·¸ì¸">
 	</form>
 		
 </body>
