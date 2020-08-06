@@ -14,11 +14,10 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h2>Please login</h2>
+		<h1>Search bicycle</h1>
 		<form method="post" action="login.jsp">
-			<p><label>id: <input type="text" name="id" maxlength="40" /></label></p>
-			<p><label>password: <input type="password" name="passwd" maxlength="45" /></label></p>
-			<p><input type="submit" value="login" /></p>
+			<p><input type="text" name="bicycle_id" maxlength="12" pattern="\d{2}-\d{2}-\d{6}" placeholder="01-23-456789" /></p>
+			<p><input type="file" accept="image/*" capture="environment" /><input type="submit" value="login" /></p>
 		</form>
 		<p style="color: red;"><%= ((message != null) ? message : "") %></p>
 	</body>
