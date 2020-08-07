@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="java.util.ArrayList" %>
-<%-- <%@ page import="needs.User" %> --%>
+<%@ page import="java.security.MessageDigest" %>
+<%@ page import="java.security.NoSuchAlgorithmException" %>
+<%@ page import="needs.*" %>
 
 <% request.setCharacterEncoding("UTF-8"); %>
 
@@ -11,41 +12,42 @@
 <% 
 	String id = request.getParameter("id");
 	String passwd = request.getParameter("passwd");
-	
 	Connection connection = null;
 	PreparedStatement pstmt = null;
 %>
 
 <%
 	try {
-		String jdbcUrl = "jdbc:mysql://localhost:3306/term_project?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
-		String dbId = "root";
-		String dbPass = "godqhrgksqkdWk3036*";
-		
-		Class.forName("com.mysql.jdbc.Driver");
-		connection = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
-		
-		String sql = "select id, position, email, phone from term_project.member where id like ? and password like ?;";
-		pstmt = connection.prepareStatement(sql);
-		pstmt.setString(1, id);
-		pstmt.setString(2, passwd);
-		
-		ResultSet rs = pstmt.executeQuery();
-		if (rs.next()){
-			/* User user = new User();
-			user.id = rs.getString(1);
-			user.position = rs.getString(2);
-			user.email = rs.getString(3);
-			user.phone = rs.getString(4); */
+		if ((id != null) && (passwd != null)) {
 			
-			RequestDispatcher rd =request.getRequestDispatcher("./mypage.jsp");
-			/* session.setAttribute("user", user); */
-			rd.forward(request, response);
-		}
-		else {
-			RequestDispatcher rd =request.getRequestDispatcher("./index.jsp");
-			request.setAttribute("message", "account not found");
-			rd.forward(request, response);
+			String jdbcUrl = "jdbc:mysql://localhost:3306/term_project?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
+			String dbId = "root";
+			String dbPass = "godqhrgksqkdWk3036*";
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
+			
+			String hashString = SHA3Hash.getSHA3Hash(id + passwd);
+			
+			String sql = "select nickname, id, phone, email from term_project.member where hash like ?;";
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setString(1, hashString);
+			
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()){
+				User user = new User();
+				user.nickname = rs.getString(1);
+				user.id = rs.getString(2);
+				user.phone = rs.getString(3);
+				user.email = rs.getString(3);
+				
+				RequestDispatcher rd =request.getRequestDispatcher("./index.jsp");
+				session.setAttribute("user", user);
+				rd.forward(request, response);
+			}
+			else {
+				request.setAttribute("message", "account not found");
+			}
 		}
 	}
 	catch (Exception e){
@@ -67,7 +69,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Insert title here</title>
+		<title>Login</title>
 	</head>
 	<body>
 		<h1>Please login</h1>
