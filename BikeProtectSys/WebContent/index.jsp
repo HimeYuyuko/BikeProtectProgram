@@ -24,8 +24,10 @@
 					String nickname = ((User) session.getAttribute("user")).nickname;
 					String id = ((User) session.getAttribute("user")).id;
 				%>
-					<label for="idToggleSwitch"></label>
-					<input type="checkbox" id="idToggleSwitch" />
+					<form>
+						<label for="idToggleSwitch"></label>
+						<input type="checkbox" id="idToggleSwitch" />
+					</form>
 				<% } %>
 			</div>
 		</header>
