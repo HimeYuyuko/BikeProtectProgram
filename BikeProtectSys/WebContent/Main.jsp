@@ -11,7 +11,7 @@
 <body>
 	로그인
 	<form method="post" action="Bycicle_Login.jsp" id="login">
-		<pre>아이디 :   <input type="text" name="id" id="id_ipnut" maxlength="12" required><br/></pre>
+		<pre>아이디혹은 등록 번호 :   <input type="text" name="id" id="id_ipnut" maxlength="12" required><br/></pre>
 		<pre>패스워드 : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
 		<input type="submit" value="로그인">
 		<button type="button" onclick="location.href='Create_byciclemember.jsp'">회원가입</button>
@@ -19,4 +19,4 @@
 	</form>
 		
 </body>
-</html>>
+</html>
