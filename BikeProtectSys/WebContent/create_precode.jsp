@@ -7,6 +7,7 @@
 <title>자전거 등록번호 생성</title>
 <head>
 <script language="javascript">
+
 function firstChange() {// 대분류 변한 경우
  var x = document.form1.first.options.selectedIndex;//선택한 인덱스
  var groups=document.form1.first.options.length;//대분류 갯수
@@ -165,7 +166,7 @@ function secondChange() {//중분류 변한 경우
 	 group[0][0]=new Option("중분류를 먼저 선택하세요","");
 	  //경기도
 	  group[1][0]=new Option("경기도 자치권 선택","");
-	  group[1][1]=new Option("고양시","KYS");
+	  group[1][1]=new Option("고양시","gys");
 	  group[1][2]=new Option("과천시","KKS");
 	  group[1][3]=new Option("광명시","KMS");
 	  group[1][4]=new Option("광주시","KJS");
@@ -216,12 +217,124 @@ function secondChange() {//중분류 변한 경우
 	  group[2][17]=new Option("화천군","HCG");
 	  group[2][18]=new Option("횡성군","HSG");
 	  //충청북도
+	  group[3][0]=new Option("충청북도 자치권 선택","");
+	  group[3][1]=new Option("제천시","JCS");
+	  group[3][2]=new Option("청주시","CUS");
+	  group[3][3]=new Option("충주시","CHJ");
+	  group[3][4]=new Option("괴산군","KSG");
+	  group[3][5]=new Option("단양군","DYG");
+	  group[3][6]=new Option("보은군","BYG");
+	  group[3][7]=new Option("영동군","YDG");
+	  group[3][8]=new Option("옥천군","YCG");
+	  group[3][9]=new Option("음성군","USG");
+	  group[3][10]=new Option("증평군","JPG");
+	  group[3][11]=new Option("진천군","JCG");
 	  //충청남도
+	  group[4][0]=new Option("충청남도 자치권 선택","");
+	  group[4][1]=new Option("계룡시","KRS");
+	  group[4][2]=new Option("공주시","KJS");
+	  group[4][3]=new Option("논산시","NSS");
+	  group[4][4]=new Option("당진시","DJS");
+	  group[4][5]=new Option("보령시","BRS");
+	  group[4][6]=new Option("서산시","SSS");
+	  group[4][7]=new Option("아산시","ASS");
+	  group[4][8]=new Option("천안시","CAS");
+	  group[4][9]=new Option("금산군","KSG");
+	  group[4][10]=new Option("부여군","BYG");
+	  group[4][11]=new Option("서천군","SCG");
+	  group[4][12]=new Option("예산군","YSG");
+	  group[4][13]=new Option("청양군","CYG");
+	  group[4][14]=new Option("태안군","TAG");
+	  group[4][15]=new Option("홍성군","HSG");
 	  //전라북도
+	  group[5][0]=new Option("전라북도 자치권 선택","");
+	  group[5][1]=new Option("군산시","GSS");
+	  group[5][2]=new Option("김제시","KJS");
+	  group[5][3]=new Option("남원시","NOS");
+	  group[5][4]=new Option("익산시","ISS");
+	  group[5][5]=new Option("전주시","JJS");
+	  group[5][6]=new Option("정읍시","JUS");
+	  group[5][7]=new Option("고창군","GCG");
+	  group[5][8]=new Option("무주군","MJG");
+	  group[5][9]=new Option("부안군","BAG");
+	  group[5][10]=new Option("순창군","SCG");
+	  group[5][11]=new Option("완주군","YJG");
+	  group[5][12]=new Option("임실군","ISG");
+	  group[5][13]=new Option("장수군","JSG");
+	  group[5][14]=new Option("진안군","JAG");
 	  //전라남도
+	  group[6][0]=new Option("전라남도 자치권 선택","");
+	  group[6][1]=new Option("광양시","GYAS");
+	  group[6][2]=new Option("나주시","NJS");
+	  group[6][3]=new Option("목포시","MPS");
+	  group[6][4]=new Option("순천시","SCS");
+	  group[6][5]=new Option("여수시","YSS");
+	  group[6][6]=new Option("강진군","KJG");
+	  group[6][7]=new Option("고흥군","KHG");
+	  group[6][8]=new Option("곡성군","KSG");
+	  group[6][9]=new Option("구례군","KRG");
+	  group[6][10]=new Option("담양군","DYG");
+	  group[6][11]=new Option("무안군","MAG");
+	  group[6][12]=new Option("보성군","BSG");
+	  group[6][13]=new Option("신안군","SAG");
+	  group[6][14]=new Option("영광군","YKG");
+	  group[6][15]=new Option("영암군","YAG");
+	  group[6][16]=new Option("완도군","YDG");
+	  group[6][17]=new Option("장성군","JSG");
+	  group[6][18]=new Option("장흥군","JHG");
+	  group[6][19]=new Option("진도군","JDG");
+	  group[6][20]=new Option("함평군","HPG");
+	  group[6][21]=new Option("해남군","HNG");
+	  group[6][22]=new Option("화순군","HSG");
 	  //경상북도
+	  group[7][0]=new Option("경상북도 자치권 선택","");
+	  group[7][1]=new Option("경산시","KSS");
+	  group[7][2]=new Option("경주시","KJS");
+	  group[7][3]=new Option("구미시","KMS");
+	  group[7][4]=new Option("김천시","KCS");
+	  group[7][5]=new Option("문경시","MKS");
+	  group[7][6]=new Option("상주시","SJS");
+	  group[7][7]=new Option("안동시","ADS");
+	  group[7][8]=new Option("영주시","YJS");
+	  group[7][9]=new Option("영찬시","YCS");
+	  group[7][10]=new Option("포항시","PHS");
+	  group[7][11]=new Option("고령군","KRG");
+	  group[7][12]=new Option("군위군","KWG");
+	  group[7][13]=new Option("봉화군","BHG");
+	  group[7][14]=new Option("성주군","SJG");
+	  group[7][15]=new Option("영덕군","YDG");
+	  group[7][16]=new Option("영양군","YYG");
+	  group[7][17]=new Option("예천군","YCG");
+	  group[7][18]=new Option("울릉군","ULG");
+	  group[7][19]=new Option("울진군","UJG");
+	  group[7][20]=new Option("의성군","YSG");
+	  group[7][21]=new Option("청도군","CDG");
+	  group[7][22]=new Option("청송군","CSG");
+	  group[7][23]=new Option("칠곡군","CKG");
 	  //경상남도
+	  group[8][0]=new Option("경상남도 자치권 선택","");
+	  group[8][1]=new Option("거제시","KJS");
+	  group[8][2]=new Option("김해시","KHS");
+	  group[8][3]=new Option("밀양시","MYS");
+	  group[8][4]=new Option("사천시","SCS");
+	  group[8][5]=new Option("양산시","YSS");
+	  group[8][6]=new Option("진주시","JJUS");
+	  group[8][7]=new Option("창원시","COS");
+	  group[8][8]=new Option("통영시","TYG");
+	  group[8][9]=new Option("거창군","KCG");
+	  group[8][10]=new Option("고성군","GSG");
+	  group[8][11]=new Option("남해군","NHG");
+	  group[8][12]=new Option("산청군","SCG");
+	  group[8][13]=new Option("의령군","YRG");
+	  group[8][14]=new Option("창녕군","CNG");
+	  group[8][15]=new Option("하동군","HDG");
+	  group[8][16]=new Option("함안군","HAG");
+	  group[8][17]=new Option("함양군","HYG");
+	  group[8][18]=new Option("합천군","HCG");
 	  //제주도
+	  group[9][0]=new Option("제주도 자치권 선택","");
+	  group[9][1]=new Option("서귀포시","SGS");
+	  group[9][2]=new Option("제주시","JJS");
  }
 
  temp = document.form1.third;
@@ -237,7 +350,7 @@ function secondChange() {//중분류 변한 경우
 </head>
 <body>
 <form name="form1" method="post" action = "update_precode.jsp" id="update_precode" >
-
+지역번호 설정:
 <select name=first onchange="firstChange();" size=1>
 <option value=''>대분류</option>
 <option value=''>특별시</option>
@@ -255,5 +368,8 @@ function secondChange() {//중분류 변한 경우
 		<input type="submit" value="등록번호 생성">
 		<button type="button" onclick="history.go(-1)">돌아가기</button>
 </form>
+<p id="output">000000</p>
+    <button id="rand" type="button">랜덤</button>
+    <script type="text/javascript" src="WebContent/mod.js"></script>
 </body>
 </html>
