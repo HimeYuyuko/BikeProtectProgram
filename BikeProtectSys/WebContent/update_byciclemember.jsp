@@ -15,6 +15,7 @@
 <% 
 	//커밋 시험
 	String percode = request.getParameter("percode");
+	String percode = request.getParameter("id");
 	String passwd = request.getParameter("passwd");
 	String name = request.getParameter("name");
 	String area = request.getParameter("area");
@@ -52,7 +53,7 @@
         }
         if(str.equals(""))
         {
-        	String sql = "insert into member values(?,?,?,?,?)";
+        	String sql = "insert into member values(?,?,?,?,?,?,?)";
         	pstmt = conn.prepareStatement(sql);
         	pstmt.setString(1, percode);
         	pstmt.setString(2, passwd);
