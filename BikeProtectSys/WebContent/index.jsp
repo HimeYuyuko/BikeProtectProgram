@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="needs.User" %>
-
-<% request.setCharacterEncoding("UTF-8"); %>
-
-<% 
+<%
+	request.setCharacterEncoding("UTF-8"); 
 	String message = (String) request.getAttribute("message");
 %>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,18 +14,29 @@
 	<body>
 		<header>
 			<div>
-				<% if (session.getAttribute("user") == null) { %>
-					<a href="./login.jsp">login</a>
-				<% 
-					} else { 
-					String nickname = ((User) session.getAttribute("user")).nickname;
-					String id = ((User) session.getAttribute("user")).id;
+				<%
+					if (session.getAttribute("user") == null) {
 				%>
-					<form>
-						<label for="idToggleSwitch"></label>
-						<input type="checkbox" id="idToggleSwitch" />
-					</form>
-				<% } %>
+				<a href="./login.jsp">login</a>
+				<%
+					} else { 
+								String nickname = ((User) session.getAttribute("user")).nickname;
+								String hash = ((User) session.getAttribute("user")).hash;
+				%>
+				<button type="button">어서오세요 <b><%= nickname %></b>님</button>
+				<nav id="user_command" hidden="hidden">
+					<ul>
+						<li>
+							<a href="./user.jsp?hash=<%= hash %>"></a>
+						</li>
+						<li>
+							<a href="./logout.jsp"></a>
+						</li>
+					</ul>
+				</nav>
+				<%
+					} 
+				%>
 			</div>
 		</header>
 		<main>
