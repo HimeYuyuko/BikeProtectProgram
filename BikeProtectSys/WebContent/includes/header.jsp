@@ -9,7 +9,7 @@
 		
 			if (session.getAttribute("user") == null) {
 		%>
-		<a href="./login.jsp">login</a>
+		<a href="./login.jsp?mode=input">login</a>
 		<%
 			} else { 
 				String nickname = ((User) session.getAttribute("user")).nickname;
@@ -22,7 +22,7 @@
 					<a href="./user.jsp?hash=<%= hash %>">your page</a>
 				</li>
 				<li>
-					<a href="./logout.jsp">logout</a>
+					<a href="./logih.jsp?mode=logout">logout</a>
 				</li>
 			</ul>
 		</nav>

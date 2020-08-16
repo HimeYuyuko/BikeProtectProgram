@@ -5,15 +5,18 @@
 <%
 	//아이디, 비밀번호와 맞는 계정을 연결해서 맞으면 자신의 페이지로, 아니면 다시 로그인 페이지로
 	request.setCharacterEncoding("UTF-8");
-
-	String id = request.getParameter("id");
-	String passwd = request.getParameter("passwd");
 	String mode = request.getParameter("mode");
 	
-	Connection connection = null;
-	PreparedStatement pstmt = null;
-	
-	if ((mode != null) && (mode.equals("form"))) {
+	if (mode == null) {
+		response.sendRedirect("./login.jsp?mode=input");
+	}
+	else if (mode.equals("form")) {
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
+		
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		
 		try {
 			if ((id != null) && (passwd != null)) {
 				String jdbcUrl = "<database url>";
@@ -33,13 +36,15 @@
 					user.nickname = rs.getString(1);
 					user.hash = rs.getString(2);
 					
-					RequestDispatcher rd =request.getRequestDispatcher("./index.jsp");
 					session.setAttribute("user", user);
-					rd.forward(request, response);
+					response.sendRedirect("./index.jsp");
 				}
 				else {
 					request.setAttribute("message", "account not found");
 				}
+			}
+			else {
+				request.setAttribute("message", "please fill your id and password in these input");
 			}
 		}
 		catch (Exception e){
@@ -51,6 +56,10 @@
 			if (connection != null)
 				try{connection.close();}catch(SQLException sqle){}
 		}
+	}
+	else if (mode.equals("logout")) {
+		session.invalidate();
+		response.sendRedirect("./index.jsp");
 	}
 	
 	String message = (String) request.getAttribute("message");

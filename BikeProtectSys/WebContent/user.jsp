@@ -5,6 +5,7 @@
 <%@ page import="java.util.ArrayList" %>
 <% 
 	//사용자 페이지, 사용자의 해시에 맞게 닉네임과 자전거 리스트를 보여준다.
+	request.setCharacterEncoding("UTF-8");
 	
 	Connection connection = null;
 	Statement stmt = null;
@@ -12,7 +13,6 @@
 	String userNickname = null;
 
 	try {
-		request.setCharacterEncoding("UTF-8");
 		String hash = request.getParameter("hash");
 		
 		if (hash != null) {
@@ -50,6 +50,8 @@
 		if (connection != null)
 			try{connection.close();}catch(SQLException sqle){}
 	}
+	
+	String redirect = request.getParameter("redirect");
 %>
 <!DOCTYPE html>
 <html>
@@ -60,6 +62,9 @@
 	<body>
 		<%@ include file="./includes/header.jsp" %>
 		<main>
+			<% if (redirect != null) { %>
+			<div><%= redirect %> 검색 결과</div>
+			<% } %>
 			<h1><%= userNickname %> 님의 페이지입니다.</h1>
 			<ul>
 				<li>채팅</li>
