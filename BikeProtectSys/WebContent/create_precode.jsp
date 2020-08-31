@@ -22,7 +22,7 @@ function firstChange() {// 대분류 변한 경우
  group[2][0]=new Option("광역시를 선택하세요","");
  group[2][1]=new Option("부산광역시","bs");
  group[2][2]=new Option("대구광역시","dg");
- group[2][3]=new Option("인천광역시","ic");
+ group[2][3]=new Option("인천광역시","ic ");
  group[2][4]=new Option("광주광역시","gg")
  group[2][5]=new Option("대전광역시","dge");
  group[2][6]=new Option("울산광역시","us");
