@@ -41,7 +41,7 @@
             	if(result.getString(2).equals(pass))
             	{
             		str="success";
-              		response.sendRedirect("account_main.jsp?curr_id="+id);
+              		response.sendRedirect("Bycicle_main.jsp?curr_id="+id);
             		if(str.equals("success")) return;
             	}
             	else{

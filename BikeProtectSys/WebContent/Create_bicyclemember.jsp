@@ -13,7 +13,7 @@
 	<form method="post" action = "create_precode.jsp" id="create_code">
 	<pre>등록번호 : <input type = "submit" value="등록번호 만들기" onclick="create_precod.jsp"><br/></pre>
 	</form>
-	<form method="post" action="update_byciclemember.jsp" id="login">
+	<form method="post" action="update_bicyclemember.jsp" id="login">
 		<pre>아이디: <input type= "text" name="usid" required></pre>
 		<pre>패스워드 : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
 		<pre>이름 :    <input type="text" name="name" id="name_ipnut" maxlength="12" required><br/></pre>

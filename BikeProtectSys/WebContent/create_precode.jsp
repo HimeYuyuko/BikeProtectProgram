@@ -346,11 +346,12 @@ function secondChange() {//중분류 변한 경우
  }
  temp.options[0].selected=true
 }//secondChange
+
 </script>
 </head>
 <body>
 <form name="form1" method="post" action = "update_precode.jsp" id="update_precode" >
-지역번호 설정:
+거주지역 :
 <select name=first onchange="firstChange();" size=1>
 <option value=''>대분류</option>
 <option value=''>특별시</option>
@@ -365,11 +366,19 @@ function secondChange() {//중분류 변한 경우
 <select name=third size=1>
  <option value=''>중분류를 먼저 선택하세요</option>
 </select>
-		<input type="submit" value="등록번호 생성">
-		<button type="button" onclick="history.go(-1)">돌아가기</button>
+		
+		<p>자전거코드: <% int Bicycle_Code = (int)Math.floor(Math.random()*1000000)+100000;
+		
+			if(Bicycle_Code>=1000000)
+			{
+				Bicycle_Code=Bicycle_Code-100000;
+				}
+					out.print(Bicycle_Code);%> 
+					</p>
+	<p><input type="submit" value="번호 생성">
+		<button type="button" onclick="history.go(-1)">돌아가기</button></p>
+
 </form>
-<p id="output">000000</p>
-    <button id="rand" type="button">랜덤</button>
-    <script type="text/javascript" src="WebContent/mod.js"></script>
+
 </body>
 </html>
