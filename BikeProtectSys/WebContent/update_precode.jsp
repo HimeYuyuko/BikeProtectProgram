@@ -13,12 +13,9 @@
 </html>
 <body>
 <% 
-	String first = request.getParameter("fis");
-	String pass = request.getParameter("pass");
-	String name = request.getParameter("name");
-	String mail = request.getParameter("mail");
-	String tel = request.getParameter("tel");
-	String user = request.getParameter("user");
+	String first = request.getParameter("firstcode");
+	String second = request.getParameter("secondcode");
+	String code = request.getParameter("code");
 	
 	Connection conn = null;
 	Statement stmt = null;
@@ -26,12 +23,12 @@
 	String str = "";
 	
 	try{
-		String jdbcUrl = "jdbc:mysql://localhost:3306/db_test";
+		String jdbcUrl = "jdbc:mysql://localhost:3306/bycicle_data";
 		String dbId = "root";
 		String dbPass = "Nazi19451210!";
 		
 		// DB와 연동을 위한 Connection 객체를 얻어내는 부분
-		Class.forName("com.mysql.jdbc.Driver");
+	Class.forName("com.mysql.jdbc.Driver");
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
@@ -39,45 +36,27 @@
         ResultSet result = stmt.executeQuery("select * from member");
  
         while(result.next()){
-            if(result.getString(1).equals(id))
+            if(result.getString(3).equals(code))
             {
-            	str="이미 존재하는 아이디입니다.";
+            	str="이미 존재하는 코드입니다.";
             	break;
-            }
-            else if(result.getString(4).equals(mail))
-            {
-            	str="이미 존재하는 이메일입니다.";
-            	break;
-            }
-            else if(result.getString(5).equals(tel))
-            {
-            	str="이미 존재하는 전화번호입니다.";
-            	break;
-            }
-            else if(id.equals("admin"))
-            {
-            	str="관리자 전용 아이디입니다.";
-            	break;
-            }
-          
+        }
         }
         if(str.equals(""))
         {
-        	String sql = "insert into member values(?,?,?,?,?,?)";
+        	String sql = "insert into member values(?,?,?)";
         	pstmt = conn.prepareStatement(sql);
-        	pstmt.setString(1, id);
-        	pstmt.setString(2, pass);
-        	pstmt.setString(3, name);
-        	pstmt.setString(4, mail);
-        	pstmt.setString(5, tel);
-        	pstmt.setString(6, user);
+        	pstmt.setString(1, first);
+        	pstmt.setString(2, second);
+        	pstmt.setString(3, code);
         	pstmt.executeUpdate();
-        	str="계정이 생성되었습니다.";
-        }
-        result.close();
-    		
+        	
+        	str="코드가 생성되었습니다.";
+            		
+	}
+	}
         
-	}catch(SQLException e){
+        catch(SQLException e){
         out.println("조회에 문제가 있습니다.");
         out.println(e.toString());
         e.printStackTrace();
