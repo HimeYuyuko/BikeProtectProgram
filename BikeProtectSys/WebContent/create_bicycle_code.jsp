@@ -56,34 +56,34 @@
 			<p><input type="submit" value="번호 생성"></p>
 		</form>
 		<script>
-			const main = async () => {
+			const rlg = document.querySelector("#rlg");
+			const blg_group = document.querySelector("#blg_group");
+			
+			const removeBLGs = () => {
+				while (blg_group.firstChild) {
+					blg_group.removeChild(blg_group.firstChild);
+				}
+			};
+			
+			const inputBLGs = blgs => {
+				let index = 0;
+				for (let blg of blgs) {
+					let blgString = "<option value=\"" + String(++index).padStart(2, '0') + "\">" + blg + "</option>";
+					blg_group.innerHTML += blgString;
+				}
+			};
+			
+			const changeBLGs = async event => {
 				const regions = await (await fetch("./regions.json")).json();
 				const regionKeys = Object.keys(regions);
 				
-				const inputBLGs = blgs => {
-					const blg_group = document.querySelector("#blg_group");
-					while (blg_group.firstChild) {
-						blg_group.removeChild(blg_group.firstChild);
-					}
-					
-					let index = 0;
-					for (let blg of blgs) {
-						let blgString = "<option value=\"" + String(++index).padStart(2, '0') + "\">" + blg + "</option>";
-						blg_group.innerHTML += blgString;
-					}
-				};
+				let regionSelected = regionKeys[Number(event.target.value) - 1];
 				
-				const changeBLG = event => {
-					let index = Number(event.target.value) - 1;
-					let regionSelected = regionKeys[index];
-					inputBLGs(regions[regionSelected]);
-				};
-				
-				const rlg = document.querySelector("#rlg");
-				rlg.addEventListener("change", changeBLG);
+				removeBLGs();
+				inputBLGs(regions[regionSelected]);
 			};
 			
-			main();
+			rlg.addEventListener("change", changeBLGs);
 		</script>
 	</body>
 </html>
