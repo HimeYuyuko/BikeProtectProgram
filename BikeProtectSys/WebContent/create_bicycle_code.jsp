@@ -19,7 +19,7 @@
 		</style>
 	</head>
 	<body>
-		<form name="form1" method="post" action="update_precode.jsp" id="update_precode" >
+		<form method="post" action="update_precode.jsp">
 			<p>거주지역 :
 				<select name="rlg" id="rlg" required="required">
 					<option value="" selected="selected" hidden="hidden" disabled="disabled">광역자치단체를 선택해주세요.</option>
