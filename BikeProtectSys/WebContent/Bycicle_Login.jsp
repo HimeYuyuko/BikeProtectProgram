@@ -18,7 +18,6 @@
 	String pass = request.getParameter("pass");
 
 	Connection conn = null;
-	Statement stmt = null;
 	PreparedStatement pstmt = null;
 	String str = "";
 	
@@ -32,28 +31,19 @@
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		stmt = conn.createStatement();
-        ResultSet result = stmt.executeQuery("select * from member");
+		String sql = "select id from Bycicle_data.member where (id like ? and pass like ?) or (code like ? and pass like ?);";
+		pstmt = connection.prepareStatement(sql);
+		pstmt.setString(1, id);
+		pstmt.setString(2, pass);
+		pstmt.setString(3, id);
+		pstmt.setString(4, pass);
+		ResultSet rs = pstmt.executeQuery();
         
-        while(result.next()){
-            if(result.getString(1).equals(id))
-            {
-            	if(result.getString(2).equals(pass))
-            	{
-            		str="success";
-              		response.sendRedirect("Bycicle_main.jsp?curr_id="+id);
-            		if(str.equals("success")) return;
-            	}
-            	else{
-            		str="비밀번호가 틀립니다.";
-            		break;
-            	}
-            }
-          
+        if(result.next()){
+      		response.sendRedirect("Bycicle_main.jsp?curr_id="+id);
         }
-        if (str.equals(""))
-        {
-        	str="아이디가 존재하지 않습니다.";        	
+        else {
+        	out.println("인식할 수 없는 계정입니다.");
         }
 
         result.close();
