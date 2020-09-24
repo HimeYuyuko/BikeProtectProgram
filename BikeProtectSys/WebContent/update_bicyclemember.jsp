@@ -36,24 +36,14 @@
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
 		stmt = conn.createStatement();
-        ResultSet result = stmt.executeQuery("select * from member");
+        ResultSet result = stmt.executeQuery("select id from member where (id like " + id + ") or (tel like " + tel + ");");
  
-        while(result.next()){
-            if(result.getString(2).equals(passwd))
-            {
-            	str="이미 존재하는 암호입니다.";
-            	break;
-            }
-            else if(result.getString(5).equals(tel))
-            {
-            	str="이미 존재하는 전화번호입니다.";
-            	break;
-            }
-          
+        if (result.next()){
+        	str="이미 존재하는 계정입니다.";
+        	break;
         }
-        if(str.equals(""))
-        {
-        	String sql = "insert into member values(?,?,?,?,?,?,?)";
+        else {
+        	String sql = "insert into member values(?,?,?,?,?,?,?);";
         	pstmt = conn.prepareStatement(sql);
         	pstmt.setString(1, percode);
         	pstmt.setString(2, passwd);
