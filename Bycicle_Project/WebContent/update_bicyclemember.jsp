@@ -68,7 +68,7 @@
     		
         
 	}catch(SQLException e){
-        out.println("조회에 문제가 있습니다.");
+        out.println("문제가 있습니다.");
         out.println(e.toString());
         e.printStackTrace();
     }
