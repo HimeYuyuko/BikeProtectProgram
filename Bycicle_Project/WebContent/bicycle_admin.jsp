@@ -16,9 +16,7 @@
 <% 
 	String id = request.getParameter("id");
 	String pass = request.getParameter("pass");
-	String percode = request.getParameter("id");
-	String name = request.getParameter("name");
-
+	
 	Connection conn = null;
 	Statement stmt = null;
 	PreparedStatement pstmt = null;
@@ -35,26 +33,13 @@
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
 		stmt = conn.createStatement();
-        ResultSet result = stmt.executeQuery("select * from member");
+        ResultSet result = stmt.executeQuery("select * from adim");
         
         while(result.next()){
-            if(result.getString(2).equals(id))
-            {
-            	if(result.getString(3).equals(pass))
-            	{
-            		str="success";
-              		response.sendRedirect("user_login.jsp?curr_id="+id);
-            		if(str.equals("success")) return;
-            	}
-            	else{
-            		str="비밀번호가 틀립니다.";
-            		break;
-            	}
-            }
             if(result.getString(1).equals(id)){
-            	if(result.getString(3).equals(pass)){
+            	if(result.getString(2).equals(pass)){
             		str="success";
-            		response.sendRedirect("user_login.jsp?curr_id="+id);
+            		response.sendRedirect("admin_login.jsp?curr_id="+id);
             		if(str.equals("success")) return;
             	}
             	else{
@@ -67,7 +52,7 @@
       
         if (str.equals(""))
         {
-        	str="아이디 혹은 코드가 존재하지 않습니다.";        	
+        	str="아이디가 존재하지 않습니다.";        	
         }
         
 

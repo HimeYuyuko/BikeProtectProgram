@@ -43,8 +43,11 @@ try{
     	String percode = rs.getString("percode");
     	String ID = rs.getString("ID");
     	String name = rs.getString("name");
+    	String pw= rs.getString("passwd");
+    	String pp = rs.getString("purpose");
+    	String tel = rs.getString("tel");
     	
-    	out.println("<p>코드: "+percode+"<p>아이디: "+ID +"<p>이름: "+name);
+    	out.println("<p>코드: "+percode+"<p>아이디: "+ID+"<p>암호: "+pw +"<p>이름: "+name+"<p>목적: "+pp +"<p>번호: "+tel);
     }
     rs.close();
 } finally{
@@ -52,6 +55,6 @@ try{
     if(conn != null) conn.close();
 }
  %>
- <p><button type="button" onclick="location.href='Main.jsp'">돌아가기</button></p>
+ <p><button type="button" onclick="history.go(-1)">돌아가기</button></p>
 </body>
 </html>

@@ -15,15 +15,15 @@
 <!--include file="./includes/header.jsp" %>-->
 	<div id="search"><h1>Search Bicycle</h1>
 	<form method="get" action="search.jsp">
-	<p><input type="search" name="bycyicle_id" maxlength="12" pattern="\d{2}-\d{2}-\d{6}" placeholder="01-23-456789">
+	<p><input type="text" name="search_code" maxlength="10" pattern="\d{2}\d{2}\d{6}" placeholder="0123456789">
 	<input type="submit" value="search"></form>
 	</div>
 	<div id="login"><form method="post" action="Bycicle_Login.jsp" id="login">
-		<pre>ID/Code :   <input type="text" name="id" id="id_ipnut" maxlength="12" required><br/></pre>
-		<pre>PassWord : <input type="password" name="pass" id="pass_ipnut" maxlength="12" required><br/></pre>
+		<pre>ID/Code :   <input type="text" name="id" id="id_ipnut" maxlength="12"><br/></pre>
+		<pre>PassWord : <input type="password" name="pass" id="pass_ipnut" maxlength="12"><br/></pre>
 		<input type="submit" value="login">
 		<button type="button" onclick="location.href='Create_bicyclemember.jsp'">Make ID</button>
-		<input type="submit" formaction="bicycle_maniger.jsp" value="Adim login">
+		<input type="submit" formaction="bicycle_admin.jsp" value="Adim login">
 		</form>
 		</div>
 		

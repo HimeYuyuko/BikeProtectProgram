@@ -6,9 +6,12 @@
 	//아이디, 비밀번호와 맞는 계정을 연결해서 맞으면 자신의 페이지로, 아니면 다시 로그인 페이지로
 	request.setCharacterEncoding("UTF-8");
 	String bicycle_id = request.getParameter("percode");
-	Connection connection = null;
+	Connection conn = null;
 	PreparedStatement pstmt = null;
-	try {
+	Statement stmt = null;
+	ResultSet rs = null;
+	try {	
+		
 		if (bicycle_id != null) {
 			String jdbcUrl = "jdbc:mysql://localhost:3306/bycicle_data";
 			String dbId = "root";
@@ -42,7 +45,7 @@
 	finally {
 		if (pstmt != null)
 			try{pstmt.close();}catch(SQLException sqle){}
-		if (connection != null)
-			try{connection.close();}catch(SQLException sqle){}
+		if (conn != null)
+			try{conn.close();}catch(SQLException sqle){}
 	}
 %> 
