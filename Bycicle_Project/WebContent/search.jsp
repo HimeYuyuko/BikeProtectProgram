@@ -44,7 +44,7 @@ try{
     	String ID = rs.getString("ID");
     	String name = rs.getString("name");
     	
-    	out.println("<p>코드: "+percode+"<p>아이디: "+ID +"<p>이름: "+name);
+    	out.println("<p>코드: "+percode+ "<p>이름: "+name);
     }
     rs.close();
 } finally{

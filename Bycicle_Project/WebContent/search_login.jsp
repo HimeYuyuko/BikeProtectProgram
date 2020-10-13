@@ -45,7 +45,7 @@ try{
     	String name = rs.getString("name");
     	String tel = rs.getString("tel");
     	
-    	out.println("<p>코드: "+percode+"<p>아이디: "+ID +"<p>이름: "+name +"<p>번호: "+tel);
+    	out.println("<p>코드: "+percode+"<p>아이디: "+ID +"<p>이름: "+name);
     }
     rs.close();
 } finally{
