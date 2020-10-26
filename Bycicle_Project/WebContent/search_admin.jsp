@@ -46,8 +46,9 @@ try{
     	String pw= rs.getString("passwd");
     	String pp = rs.getString("purpose");
     	String tel = rs.getString("tel");
+    	String rp = rs.getString("rp");
     	
-    	out.println("<p>코드: "+percode+"<p>아이디: "+ID+"<p>암호: "+pw +"<p>이름: "+name+"<p>목적: "+pp +"<p>번호: "+tel);
+    	out.println("<p>코드: "+percode+"<p>아이디: "+ID+"<p>암호: "+pw +"<p>이름: "+name+"<p>목적: "+pp +"<p>번호: "+tel +"<p>신고여부: "+rp);
     }
     rs.close();
 } finally{

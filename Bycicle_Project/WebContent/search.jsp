@@ -43,8 +43,9 @@ try{
     	String percode = rs.getString("percode");
     	String ID = rs.getString("ID");
     	String name = rs.getString("name");
+    	String rp = rs.getString("rp");
     	
-    	out.println("<p>코드: "+percode+ "<p>이름: "+name);
+    	out.println("<p>코드: "+percode+ "<p>이름: "+name + "<p>신고여부: "+rp);
     }
     rs.close();
 } finally{

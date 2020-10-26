@@ -17,7 +17,8 @@
 	<input type="submit" value="search"></form>
 	</div>
 	<div id="login">
-	<pre>현재 로그인계정: <%String id = request.getParameter("curr_id"); %><%=id %><p><button type="button" onclick="location.href='Main.jsp'">로그아웃</button></p></pre>
+	<pre>현재 로그인계정: <%String id = request.getParameter("curr_id"); %><%=id %><p><button type="button" onclick="location.href='Main.jsp'">로그아웃</button>&nbsp<button type="button" onclick="location.href='update_user.jsp'">정보변경</button></pre>
+	<br><button type="button" onclick="location.href='report_user.jsp'">도난 신고</button>
 	</div>
 		
 </body>
