@@ -5,7 +5,7 @@
 <%//파라미터 값을 얻어내는 부분
 	String id = request.getParameter("id");
 	String passwd = request.getParameter("passwd");
-	String tel = request.getParameter("tel");
+	String rpasswd = request.getParameter("rpasswd");
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -19,18 +19,18 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		String sql = "update member set tel = ? where id = ? and passwd = ?";
+		String sql = "update member set passwd = ? where id = ? and passwd = ?";
 		pstmt=conn.prepareStatement(sql);
-		pstmt.setString(1, tel);
+		pstmt.setString(1, rpasswd);
 		pstmt.setString(2, id);
 		pstmt.setString(3, passwd);
 		int result = pstmt.executeUpdate();
 		
 		if(result > 0){
-			str="전화번호가 변경 되었습니다.";
+			str="패스워드가 변경 되었습니다.";
 		}
 		else {
-			str="아이디나 비밀번호가 틀렸습니다.";
+			str="아이디나 패스워드가 틀렸습니다.";
 		}
 	}
 	catch(Exception e) {

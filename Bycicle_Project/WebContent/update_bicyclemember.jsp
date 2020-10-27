@@ -20,6 +20,7 @@
 	String name = request.getParameter("name");
 	String purpose = request.getParameter("usetype");
 	String tel = request.getParameter("tel");
+	String rp = request.getParameter("report");;
 	Connection conn = null;
 	Statement stmt = null;
 	PreparedStatement pstmt = null;
@@ -53,7 +54,7 @@
         }
         if(str.equals(""))
         {
-        	String sql = "insert into bycicle_data.member values(?,?,?,?,?,?)";
+        	String sql = "insert into bycicle_data.member values(?,?,?,?,?,?,?)";
         	pstmt = conn.prepareStatement(sql);
         	pstmt.setString(1, percode);
         	pstmt.setString(2, ID);
@@ -61,6 +62,7 @@
         	pstmt.setString(4, name);
         	pstmt.setString(5, purpose);
         	pstmt.setString(6, tel);
+        	pstmt.setString(7, rp);
         	pstmt.executeUpdate();
         	str="계정이 생성되었습니다.";
         }
