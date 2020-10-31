@@ -18,7 +18,6 @@
 	String pass = request.getParameter("pass");
 	
 	Connection conn = null;
-	Statement stmt = null;
 	PreparedStatement pstmt = null;
 	String str = "";
 	
@@ -32,33 +31,22 @@
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		stmt = conn.createStatement();
-        ResultSet result = stmt.executeQuery("select * from adim");
+		String sql = "select id from adim where id like ? and pass like ?;";
+		pstmt = connection.prepareStatement(sql);
+		pstmt.setString(1, id);
+		pstmt.setString(2, pass);
+		ResultSet rs = pstmt.executeQuery();
         
-        while(result.next()){
-            if(result.getString(1).equals(id)){
-            	if(result.getString(2).equals(pass)){
-            		str="success";
-            		response.sendRedirect("admin_login.jsp?curr_id="+id);
-            		if(str.equals("success")) return;
-            	}
-            	else{
-            		str="비밀번호가 틀립니다.";
-            		break;
-            	}
-            }
-          
+        if(rs.next()) {
+    		str = "success";
+        	User user = new User();
+        	user.id = rs.getString(1);
+        	session.setAttribute("user", user);
+    		response.sendRedirect("admin_login.jsp?curr_id="+id);
         }
-      
-        if (str.equals(""))
-        {
-        	str="아이디가 존재하지 않습니다.";        	
+        else {
+        	str = "아이디나 비밀번호가 잘못되었습니다.";
         }
-        
-
-        result.close();
-    		
-        
 	}catch(SQLException e){
         out.println("연결에 문제가 있습니다.");
         out.println(e.toString());
