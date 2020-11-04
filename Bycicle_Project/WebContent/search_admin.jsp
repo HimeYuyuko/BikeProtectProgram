@@ -56,6 +56,7 @@ try{
     if(conn != null) conn.close();
 }
  %>
+ <p><button type="button" onclick="location.href='update_userPW.jsp'">암호 변경</button> <button type="button" onclick="location.href='update_userNM.jsp'">사용자명 변경</button>  <button type="button" onclick="location.href='update_user.jsp'">전화번호 변경</button>
  <p><button type="button" onclick="history.go(-1)">돌아가기</button></p>
 </body>
 </html>
