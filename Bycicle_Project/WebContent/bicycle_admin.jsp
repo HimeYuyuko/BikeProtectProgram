@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <%@page import="java.sql.*" %>
-
+<%@ page import="needs.User" %>
 <% request.setCharacterEncoding("utf-8"); %>
 
 
@@ -19,6 +19,7 @@
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
+	Statement stmt = null;
 	String str = "";
 	
 	try{
@@ -31,8 +32,8 @@
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		String sql = "select id from adim where id like ? and pass like ?;";
-		pstmt = connection.prepareStatement(sql);
+		String sql = "select id from adim where id like ? and passwd like ?;";
+		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		pstmt.setString(2, pass);
 		ResultSet rs = pstmt.executeQuery();

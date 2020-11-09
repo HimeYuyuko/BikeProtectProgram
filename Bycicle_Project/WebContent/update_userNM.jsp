@@ -12,13 +12,14 @@
 <title>정보 수정</title>
 <body>
 
-<h1> 이름 변경</h1>
+<h1>이름 변경</h1>
 	<form method="post" action="update_userNMPro.jsp">
 		아이디: <input type="text" name="id" maxlength="12" required><br/>
-		이름: <input type="text" name="name" maxlength="10" required><br>
 		패스워드: <input type="password" name="passwd" maxlength="12" required><br/>
+		변경할 이름: <input type="text" name="name" maxlength="10" required><br>
 		<input type="submit" value="사용자명 변경">
-		</form><p><button type="button" onclick="history.go(-1)">돌아가기</button>
+		</form>
+		<p><button type="button" onclick="history.go(-1)">돌아가기</button>
 
 </body>
 </html>

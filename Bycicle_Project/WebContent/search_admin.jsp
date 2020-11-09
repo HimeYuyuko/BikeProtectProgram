@@ -56,7 +56,7 @@ try{
     if(conn != null) conn.close();
 }
  %>
- <p><button type="button" onclick="location.href='update_userPW.jsp'">암호 변경</button> <button type="button" onclick="location.href='update_userNM.jsp'">사용자명 변경</button>  <button type="button" onclick="location.href='update_user.jsp'">전화번호 변경</button>
+ <p><button type="button" onclick="location.href='update_userPW.jsp'">암호 변경</button> <button type="button" onclick="location.href='update_userNM.jsp'">사용자명 변경</button> <button type="button" onclick="location.href='update_user.jsp'">전화번호 변경</button><button type="button" onclick="location.href='report_admin.jsp'">해당 장비 신고</button> <button type="button" onclick="location.href='report_adminc.jsp'">신고 취소</button>
  <p><button type="button" onclick="history.go(-1)">돌아가기</button></p>
 </body>
 </html>

@@ -49,6 +49,6 @@
 </head>
 <body>
 	<%=str %></br>
-	<button type="button" onclick="history.go(-1)">돌아가기</button>
+	<button type="button" onclick="history.go(-2)">돌아가기</button>
 </body>
 </html>

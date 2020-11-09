@@ -7,9 +7,20 @@
 <link href="login.css" type="text/css" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=ZCOOL%20KuaiLe' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Sedgwick%20Ave%20Display' rel='stylesheet'>
+ 
+<script>
+    function confirm_test() {
+        var confirm_test = confirm("신고하실 경우 .");
+ 
+        if ( confirm_test == true ) {
+        	location.href="./reprot_user.jsp"
+        } else{
+            return;
+        }
+    }
+</script>
 
 <title>사용자 계정</title>
-</html>
 <body>
 	<div id="search"><h1>Search Bicycle</h1>
 	<form method="get" action="search_login.jsp">
