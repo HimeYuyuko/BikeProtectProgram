@@ -28,8 +28,8 @@
 	
 	try{
 		String jdbcUrl = "jdbc:mysql://localhost:3306/bycicle_data";
-		String dbId = "root";
-		String dbPass = "Nazi19451210!";
+		String dbId="root";
+		String dbPass="Nazi19451210!";
 		
 		// DB와 연동을 위한 Connection 객체를 얻어내는 부분
 		Class.forName("com.mysql.jdbc.Driver");
@@ -54,7 +54,7 @@
         }
         if(str.equals(""))
         {
-        	String sql = "insert into bycicle_data.member values(?,?,?,?,?,?,?)";
+        	String sql = "insert into Bycicle_Data.member values(?,?,?,?,?,?,?)";
         	pstmt = conn.prepareStatement(sql);
         	pstmt.setString(1, percode);
         	pstmt.setString(2, ID);

@@ -13,7 +13,7 @@
 <body>
 	<div id="search"><h1>Search Bicycle</h1>
 	<form method="get" action="search_admin.jsp">
-	<p><input type="search" name="search_code" maxlength="10" pattern="\d{2}\d{2}\d{6}" placeholder="0123456789">
+	<p><input type="search" name="search_code" maxlength="10" pattern="\d{2}\d{2}\d{6}" placeholder="0123456789" autocomplete = "off">
 	<input type="submit" value="search"></form>
 	</div>
 	<div id="login">

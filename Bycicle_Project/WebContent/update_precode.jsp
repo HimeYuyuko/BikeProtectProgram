@@ -26,8 +26,8 @@
 	
 	try{
 		String jdbcUrl = "jdbc:mysql://localhost:3306/bycicle_data";
-		String dbId = "root";
-		String dbPass = "Nazi19451210!";
+		String dbId="root";
+		String dbPass="Nazi19451210!";
 		
 		// DB와 연동을 위한 Connection 객체를 얻어내는 부분
 		Class.forName("com.mysql.jdbc.Driver");

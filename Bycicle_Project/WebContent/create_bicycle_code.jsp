@@ -51,7 +51,7 @@
 					</optgroup>
 				</select>
 			</p>
-			<p>난수: <%= Bicycle_Code %></p>
+			<p>코드: <%= Bicycle_Code %></p>
 			<input type="hidden" name="random_number" value="<%= Bicycle_Code %>" />
 			<input type="submit" value="코드 생성">
 				 <button type="button" onclick="history.go(-1)">돌아가기</button></p>
