@@ -4,14 +4,159 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="example.css" type="text/css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script> $.fn.setPreview = function(opt){ 
+	"use strict" 
+	var defaultOpt = 
+	{ inputFile: $(this), img: null, w: 200, h: 200 };
+	$.extend(defaultOpt, opt); 
+	var previewImage = function(){ 
+		if (!defaultOpt.inputFile || !defaultOpt.img) 
+			return; 
+		var inputFile = defaultOpt.inputFile.get(0); 
+		var img = defaultOpt.img.get(0); 
+		// FileReader 
+		if (window.FileReader) { 
+			// image 파일만 
+			if (!inputFile.files[0].type.match(/image\//)) 
+				return; 
+			// preview 
+			try { var reader = new FileReader(); 
+			reader.onload = function(e){ 
+				img.src = e.target.result;
+				img.style.width = defaultOpt.w+'px'; 
+				img.style.height = defaultOpt.h+'px'; 
+				img.style.display = ''; } 
+			reader.readAsDataURL(inputFile.files[0]); } 
+			catch (e) { 
+				// exception... 
+				} 
+			// img.filters (MSIE) 
+			} else if (img.filters) 
+			{ inputFile.select(); 
+			inputFile.blur(); 
+			var imgSrc = document.selection.createRange().text; 
+			img.style.width = defaultOpt.w+'px'; 
+			img.style.height = defaultOpt.h+'px'; 
+			img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; 
+			img.style.display = ''; 
+			// no support 
+			} else { 
+				// Safari5, ... 
+				} }; 
+				// onchange 
+				$(this).change(function(){ previewImage(); }); }; 
+				$(document).ready(function(){ 
+					var opt = { img: $('#img_preview'), w: 200, h: 200 };
+					$('#input_file').setPreview(opt); }); 
+</script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script> $.fn.setPreview = function(opt){ 
+	"use strict" 
+	var defaultOpt = 
+	{ inputFile: $(this), img: null, w: 200, h: 200 };
+	$.extend(defaultOpt, opt); 
+	var previewImage = function(){ 
+		if (!defaultOpt.inputFile || !defaultOpt.img) 
+			return; 
+		var inputFile = defaultOpt.inputFile.get(0); 
+		var img = defaultOpt.img.get(0); 
+		// FileReader 
+		if (window.FileReader) { 
+			// image 파일만 
+			if (!inputFile.files[0].type.match(/image\//)) 
+				return; 
+			// preview 
+			try { var reader = new FileReader(); 
+			reader.onload = function(e){ 
+				img.src = e.target.result;
+				img.style.width = defaultOpt.w+'px'; 
+				img.style.height = defaultOpt.h+'px'; 
+				img.style.display = ''; } 
+			reader.readAsDataURL(inputFile.files[0]); } 
+			catch (e) { 
+				// exception... 
+				} 
+			// img.filters (MSIE) 
+			} else if (img.filters) 
+			{ inputFile.select(); 
+			inputFile.blur(); 
+			var imgSrc = document.selection.createRange().text; 
+			img.style.width = defaultOpt.w+'px'; 
+			img.style.height = defaultOpt.h+'px'; 
+			img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; 
+			img.style.display = ''; 
+			// no support 
+			} else { 
+				// Safari5, ... 
+				} }; 
+				// onchange 
+				$(this).change(function(){ previewImage(); }); }; 
+				$(document).ready(function(){ 
+					var opt = { img: $('#img_preview1'), w: 200, h: 200 };
+					$('#input_file1').setPreview(opt); }); 
+</script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script> $.fn.setPreview = function(opt){ 
+	"use strict" 
+	var defaultOpt = 
+	{ inputFile: $(this), img: null, w: 200, h: 200 };
+	$.extend(defaultOpt, opt); 
+	var previewImage = function(){ 
+		if (!defaultOpt.inputFile || !defaultOpt.img) 
+			return; 
+		var inputFile = defaultOpt.inputFile.get(0); 
+		var img = defaultOpt.img.get(0); 
+		// FileReader 
+		if (window.FileReader) { 
+			// image 파일만 
+			if (!inputFile.files[0].type.match(/image\//)) 
+				return; 
+			// preview 
+			try { var reader = new FileReader(); 
+			reader.onload = function(e){ 
+				img.src = e.target.result;
+				img.style.width = defaultOpt.w+'px'; 
+				img.style.height = defaultOpt.h+'px'; 
+				img.style.display = ''; } 
+			reader.readAsDataURL(inputFile.files[0]); } 
+			catch (e) { 
+				// exception... 
+				} 
+			// img.filters (MSIE) 
+			} else if (img.filters) 
+			{ inputFile.select(); 
+			inputFile.blur(); 
+			var imgSrc = document.selection.createRange().text; 
+			img.style.width = defaultOpt.w+'px'; 
+			img.style.height = defaultOpt.h+'px'; 
+			img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; 
+			img.style.display = ''; 
+			// no support 
+			} else { 
+				// Safari5, ... 
+				} }; 
+				// onchange 
+				$(this).change(function(){ previewImage(); }); }; 
+				$(document).ready(function(){ 
+					var opt = { img: $('#img_preview2'), w: 200, h: 200 };
+					$('#input_file2').setPreview(opt); }); 
+</script>
 <body>
 <form name="form1" method="post" action="image-process.jsp">
 <h1>Insert an Image into MySQL Database!</h1>
 <input type="text" name="fname" autocomplete = "off"><br><br>
 <input type="text" name="lname" autocomplete = "off"><br><br>
 <input type="text" name="email" autocomplete = "off"><br><br>
-<input type="file" name="myimg"><br><br>
+<input type="file" name="myimg" id ="input_file"><br><br>
+<input type="file" name="myimg2" id ="input_file1"><br><br>
+<input type="file" name="myimg3" id ="input_file2"><br><br>
+<img id="img_preview" style="display:none;"/>
+<img id="img_preview1" style="display:none;"/>
+<img id="img_preview2" style="display:none;"/><br>
 <input type="submit" name="submit" value="Submit">
+
 </form>
 </body>
 </html>

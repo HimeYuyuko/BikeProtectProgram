@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<link rel="stylesheet" type="text/css" href="main.css">
 <link href="Main.css" type="text/css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=ZCOOL%20KuaiLe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Sedgwick%20Ave%20Display' rel='stylesheet'>
@@ -17,7 +16,9 @@
 	<form method="get" action="search.jsp">
 	<p><input type="text" name="search_code" maxlength="10" pattern="\d{2}\d{2}\d{6}" placeholder="0123456789" autocomplete = "off">
 	<input type="submit" value="search"></form>
+	<button onclick="location.href='Photo.jsp'">Move to Photo Search Page</button >
 	</div>
+	
 	<div id="login"><form method="post" action="Bycicle_Login.jsp" id="login">
 		<pre>ID/Code :   <input type="text" name="id" id="id_ipnut" maxlength="12" autocomplete = "off"><br/></pre>
 		<pre>PassWord : <input type="password" name="pass" id="pass_ipnut" maxlength="12"><br/></pre>
@@ -26,6 +27,8 @@
 		<input type="submit" formaction="bicycle_admin.jsp" value="Adim login">
 		</form>
 		</div>
-		
+
+
+</script>
 </body>
 </html>

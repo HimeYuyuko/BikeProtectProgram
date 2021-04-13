@@ -24,6 +24,8 @@ String fname=request.getParameter("fname");
 String lname=request.getParameter("lname");
 String email=request.getParameter("email");
 String myloc=request.getParameter("myimg");
+String myloc2=request.getParameter("myimg2");
+String myloc3=request.getParameter("myimg3");
 //out.print("First Name :"+fname+"myloc="+myloc);
 try{
 	String jdbcUrl="jdbc:mysql://localhost:3306/db_test?serverTimezone=UTC&useSSL=false";
@@ -33,16 +35,23 @@ try{
 	conn=DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	System.out.println(myloc);
 	File image= new File(myloc);
-	pstmt = conn.prepareStatement("insert into image(firstname, lastname, email,image) " + "values(?,?,?,?)");
+	File image2= new File(myloc2);
+	File image3= new File(myloc3);
+	pstmt = conn.prepareStatement("insert into image(firstname, lastname, email,image,image2,image3) " + "values(?,?,?,?,?,?)");
 	pstmt.setString(1, fname);
 	pstmt.setString(2, lname);
 	pstmt.setString(3, email);
 	fis=new FileInputStream(image);
 	pstmt.setBinaryStream(4, (InputStream) fis, (int) (image.length()));
+	fis=new FileInputStream(image2);
+	pstmt.setBinaryStream(5, (InputStream) fis, (int) (image.length()));
+	fis=new FileInputStream(image3);
+	pstmt.setBinaryStream(6, (InputStream) fis, (int) (image.length()));
 int count = pstmt.executeUpdate();
 if(count>0)
 {
 	out.println("insert successfully");
+	
 		}
 else
 {
@@ -68,5 +77,6 @@ finally{
 	}
 }
 %>
+<button type="button" onclick="history.go(-1)">돌아가기</button>
     </body>
 </html>
