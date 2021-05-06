@@ -12,9 +12,9 @@
 	String str = "";
 	
 	try{
-		String jdbcUrl = "jdbc:mysql://localhost:3306/bycicle_data";
+		String jdbcUrl = "jdbc:mysql://192.168.0.253:3306/Bycicle_Data";
 		String dbId="root";
-		String dbPass="Nazi19451210!";
+		String dbPass="123456";
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);

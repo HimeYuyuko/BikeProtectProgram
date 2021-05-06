@@ -23,16 +23,15 @@
 	String str = "";
 	
 	try{
-		String jdbcUrl = "jdbc:mysql://localhost:3306/bycicle_data";
+		String jdbcUrl = "jdbc:mysql://192.168.0.253:3306/Bycicle_Data";
 		String dbId="root";
-		String dbPass="Nazi19451210!";
-		
+		String dbPass="123456";
 		// DB와 연동을 위한 Connection 객체를 얻어내는 부분
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		conn = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 		
-		String sql = "select id from adim where id like ? and passwd like ?;";
+		String sql = "select id from Admin where id like ? and passwd like ?;";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		pstmt.setString(2, pass);

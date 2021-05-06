@@ -1,0 +1,154 @@
+body{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/*전체적인마진 설정*/
+header{
+	text-align: center;
+	font-style: italic;
+	font-size: 24px;
+}
+/*header내의 내용 위치및 스타일 설정*/
+canvas{
+	position: relative;
+	top: 20px;
+	left: 20px;
+	border: double;
+	margin: auto;
+}
+/*캔버스위치 및 크기 설정*/
+#f_egg{
+	position: absolute;
+	cursor: pointer;
+	width: 150px;
+	height: 75px;
+	bottom: 150px;
+	left:600px;
+}
+/*f_egg 크기설정*/
+span#container_egg{
+	height:1060px;
+	width:1920px;
+}
+/*container_egg 크기 설정*/
+span#gradrate{
+	font-size: 100px;
+	font-weight: bold;
+}
+/*성장도 표시창*/
+span#clearate{
+	font-size: 100px;
+	font-weight: bold;
+}
+/*오염도 표시창*/
+span#container_baby{
+	height:700px;
+	width:1920px;
+	display:none;
+}
+/*#container_baby 크기및 숨기기 설정*/
+#f_baby{
+	position: absolute;
+	cursor: pointer;
+	width: 150px;
+	height: 150px;
+	bottom: 150px;
+	left:600px;
+}
+/*f_baby 크기 설정*/
+span#container_girl{
+	height:1060px;
+	width:1920px;
+	display:none;
+}
+/*container_girl 크기및 숨기기 설정*/
+#f_girl{
+	position: absolute;
+	cursor: pointer;
+	width: 150px;
+	height: 150px;
+	bottom: 150px;
+	left:600px;
+}
+/*f_girl 크기 설정*/
+#f_adult{
+	position: absolute;
+	cursor: pointer;
+	width: 150px;
+	height: 150px;
+	bottom: 150px;
+	left:600px;
+}
+/*#f_adult 크기설정 */
+span#container_adult{
+	height:1060px;
+	width:1920px;
+	display:none;
+}
+/*container_adult 크기및 숨기기설정*/
+div#playgame{
+	display: none;
+}
+/*게임 창 숨기기용*/
+div#login_div{
+	border:1px dotted black;
+	height:1080px;
+	width:1920px;
+	background-image: url('./res/9_xqvvr4aps1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	background-size: cover;
+}
+/*로그인 바탕화면 설정*/
+#login{
+	margin-left: 350px;
+	margin-top: 150px;
+	width:520px;
+	height:340px;
+	border:solid black 1px;
+	text-align: center;
+	font-size: 22px;
+	background-size: cover;
+	background-image: url('./res/5_x38mmt2elw.jpg');
+	z-index:1;
+	position:relative;
+	border-radius:5px;
+	font-family: 'ZCOOL KuaiLe';
+}
+/*login창 내 배경 및 내용 폰트 설정*/
+div#title{
+	font-size:50px;
+	font-family: 'Sedgwick Ave Display';
+	color:black;
+}
+/*login창 내 title 폰트설정*/
+div#manual{
+	background-image: url('./res/manual.jpg');
+	top: 20px;
+	left: 20px;
+	height:1080px;
+	width:1920px;
+	background-size: cover;
+	display: none;
+}
+/*메뉴얼창 띄우기용*/
+#gamestart_b{
+	position: absolute;
+	left:1820px;
+	top:1040px;
+	border-radius:10px;
+	 background-color: rgb(144,0,0);
+	 border: none;
+	 display: inline-block;
+	  cursor: pointer;
+		color:#fff;
+		width: 100px;
+		height: 30px;
+		font-size: 10px;
+}
+/*게임시작버튼용*/
+#gamestart_b:hover{
+	 background-color: black;
+
+}
+/*게임시작 버튼 커서댈시*/

@@ -20,33 +20,31 @@ PreparedStatement pstmt = null;
 ResultSet rs=null;
 
 FileInputStream fis=null;
-String fname=request.getParameter("fname");
-String lname=request.getParameter("lname");
-String email=request.getParameter("email");
+String fname=request.getParameter("percode");
+String lname=request.getParameter("passwd");
 String myloc=request.getParameter("myimg");
 String myloc2=request.getParameter("myimg2");
 String myloc3=request.getParameter("myimg3");
 //out.print("First Name :"+fname+"myloc="+myloc);
 try{
-	String jdbcUrl="jdbc:mysql://localhost:3306/db_test?serverTimezone=UTC&useSSL=false";
+	String jdbcUrl = "jdbc:mysql://192.168.0.253:3306/Bycicle_Data";
 	String dbId="root";
-	String dbPass="Nazi19451210!";
+	String dbPass="123456";
 	Class.forName("com.mysql.jdbc.Driver");
 	conn=DriverManager.getConnection(jdbcUrl, dbId, dbPass);
 	System.out.println(myloc);
 	File image= new File(myloc);
 	File image2= new File(myloc2);
 	File image3= new File(myloc3);
-	pstmt = conn.prepareStatement("insert into image(firstname, lastname, email,image,image2,image3) " + "values(?,?,?,?,?,?)");
+	pstmt = conn.prepareStatement("insert into image(percode, passwd,image,image2,image3) " + "values(?,?,?,?,?)");
 	pstmt.setString(1, fname);
 	pstmt.setString(2, lname);
-	pstmt.setString(3, email);
 	fis=new FileInputStream(image);
-	pstmt.setBinaryStream(4, (InputStream) fis, (int) (image.length()));
+	pstmt.setBinaryStream(3, (InputStream) fis, (int) (image.length()));
 	fis=new FileInputStream(image2);
-	pstmt.setBinaryStream(5, (InputStream) fis, (int) (image.length()));
+	pstmt.setBinaryStream(4, (InputStream) fis, (int) (image.length()));
 	fis=new FileInputStream(image3);
-	pstmt.setBinaryStream(6, (InputStream) fis, (int) (image.length()));
+	pstmt.setBinaryStream(5, (InputStream) fis, (int) (image.length()));
 int count = pstmt.executeUpdate();
 if(count>0)
 {

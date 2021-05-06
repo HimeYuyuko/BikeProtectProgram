@@ -16,7 +16,8 @@
 	<form method="get" action="search.jsp">
 	<p><input type="text" name="search_code" maxlength="10" pattern="\d{2}\d{2}\d{6}" placeholder="0123456789" autocomplete = "off">
 	<input type="submit" value="search"></form>
-	<button onclick="location.href='Photo.jsp'">Move to Photo Search Page</button >
+	<button onclick="location.href='index.html'">Move to Photo Search Page</button>
+	<button onclick="location.href='gameindex.html'">Move to Game Page</button>
 	</div>
 	
 	<div id="login"><form method="post" action="Bycicle_Login.jsp" id="login">

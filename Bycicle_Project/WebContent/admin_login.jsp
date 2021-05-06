@@ -15,7 +15,7 @@
 	<form method="get" action="search_admin.jsp">
 	<p><input type="search" name="search_code" maxlength="10" pattern="\d{2}\d{2}\d{6}" placeholder="0123456789" autocomplete = "off">
 	<input type="submit" value="search"></form>
-	<button onclick="location.href='Photo.jsp'">Move to Photo Search Page</button >
+	<button onclick="location.href='index.html'">Move to Photo Search Page</button >
 	</div>
 	<div id="login">
 	<pre>현재 로그인계정: <%String id = request.getParameter("curr_id"); %><%=id %><p><button type="button" onclick="location.href='Main.jsp'">로그아웃</button></p></pre>

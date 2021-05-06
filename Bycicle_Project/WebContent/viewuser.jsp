@@ -15,7 +15,7 @@
 	
 	<h1>신고 하기</h1>
 	<form method="post" action="view.jsp">
-		아이디: <input type="text" name="id" maxlength="12" required><br/>
+		아이디: <input type="number" name="id" maxlength="16" required><br/>
 		<input type="submit" value="신고하기">
 		</form>
 	<button onclick="history.go(-1)">메인페이지로</button>

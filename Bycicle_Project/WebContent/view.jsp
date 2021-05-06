@@ -10,12 +10,13 @@
 	byte[ ] imgData, imgData2, imgData3 = null ;
 	Statement stmt = null;
 	String id = request.getParameter("id");
-	try {
-			String jdbcUrl = "jdbc:mysql://localhost:3306/db_test?serverTimezone=UTC&useSSL=false";
+	try {	
+			Class.forName("com.mysql.jdbc.Driver");
+			String jdbcUrl = "jdbc:mysql://192.168.0.253:3306/Bycicle_Data";
 			String dbId="root";
-			String dbPass="Nazi19451210!";
+			String dbPass="123456";
 			con = DriverManager.getConnection(jdbcUrl, dbId, dbPass);
-			String sql ="select image from image where firstname like ?";
+			String sql ="select image from image where percode like ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,id);
 			ResultSet rs = pstmt.executeQuery();

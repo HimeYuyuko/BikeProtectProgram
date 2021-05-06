@@ -19,9 +19,9 @@ String str = "";
 
 try{
 	
-	String jdbcUrl = "jdbc:mysql://192.168.0.252:3306/Bycicle_Data";
-	String dbId = "root";
-	String dbPass = "1234";
+	String jdbcUrl = "jdbc:mysql://192.168.0.253:3306/Bycicle_Data";
+	String dbId="root";
+	String dbPass="123456";
 	
 	// DB와 연동을 위한 Connection 객체를 얻어내는 부분
 	Class.forName("com.mysql.jdbc.Driver");
