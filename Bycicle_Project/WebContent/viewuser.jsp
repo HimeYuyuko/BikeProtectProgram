@@ -13,10 +13,10 @@
 </html>
 <body>
 	
-	<h1>신고 하기</h1>
+	<h1>이미지이미지 검색</h1>
 	<form method="post" action="view.jsp">
-		아이디: <input type="number" name="id" maxlength="16" required><br/>
-		<input type="submit" value="신고하기">
+		아이디: <input type="number" name="percode" maxlength="16" required><br/>
+		<input type="submit" value="찾기">
 		</form>
 	<button onclick="history.go(-1)">메인페이지로</button>
 </body>

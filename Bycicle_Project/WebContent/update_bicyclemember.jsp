@@ -15,10 +15,10 @@
 <% 
 	//커밋 시험
 	String percode = request.getParameter("Mcode");
-	String ID = request.getParameter("usid");
+	String ID = request.getParameter("id");
 	String passwd = request.getParameter("pass");
 	String name = request.getParameter("name");
-	String purpose = request.getParameter("usetype");
+	String purpose = request.getParameter("mail");
 	String tel = request.getParameter("tel");
 	String rp = request.getParameter("report");;
 	Connection conn = null;

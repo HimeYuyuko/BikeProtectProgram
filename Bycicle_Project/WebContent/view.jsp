@@ -9,7 +9,7 @@
 	Connection con = null;
 	byte[ ] imgData, imgData2, imgData3 = null ;
 	Statement stmt = null;
-	String id = request.getParameter("id");
+	String id = request.getParameter("percode");
 	try {	
 			Class.forName("com.mysql.jdbc.Driver");
 			String jdbcUrl = "jdbc:mysql://192.168.0.253:3306/Bycicle_Data";
