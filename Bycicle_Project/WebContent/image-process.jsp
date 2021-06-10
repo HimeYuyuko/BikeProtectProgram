@@ -21,7 +21,6 @@ ResultSet rs=null;
 
 FileInputStream fis=null;
 String fname=request.getParameter("percode");
-String lname=request.getParameter("passwd");
 String myloc=request.getParameter("myimg");
 String myloc2=request.getParameter("myimg2");
 String myloc3=request.getParameter("myimg3");
@@ -36,15 +35,14 @@ try{
 	File image= new File(myloc);
 	File image2= new File(myloc2);
 	File image3= new File(myloc3);
-	pstmt = conn.prepareStatement("insert into image(percode, passwd,image,image2,image3) " + "values(?,?,?,?,?)");
+	pstmt = conn.prepareStatement("insert into image(percode,image,image2,image3) " + "values(?,?,?,?)");
 	pstmt.setString(1, fname);
-	pstmt.setString(2, lname);
 	fis=new FileInputStream(image);
-	pstmt.setBinaryStream(3, (InputStream) fis, (int) (image.length()));
+	pstmt.setBinaryStream(2, (InputStream) fis, (int) (image.length()));
 	fis=new FileInputStream(image2);
-	pstmt.setBinaryStream(4, (InputStream) fis, (int) (image.length()));
+	pstmt.setBinaryStream(3, (InputStream) fis, (int) (image.length()));
 	fis=new FileInputStream(image3);
-	pstmt.setBinaryStream(5, (InputStream) fis, (int) (image.length()));
+	pstmt.setBinaryStream(4, (InputStream) fis, (int) (image.length()));
 int count = pstmt.executeUpdate();
 if(count>0)
 {
@@ -59,6 +57,7 @@ else
 catch(Exception ex)
 	{
 		ex.printStackTrace();
+		out.println("not successfully");
 	}
 finally{
 	if(rs!=null){
@@ -75,6 +74,6 @@ finally{
 	}
 }
 %>
-<button type="button" onclick="history.go(-1)">돌아가기</button>
+<button type="button" onclick="history.go(-2)">돌아가기</button>
     </body>
 </html>

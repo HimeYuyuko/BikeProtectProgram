@@ -10,7 +10,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>회원 추가</title>
-</html>
 <body>
 <% 
 	//커밋 시험
